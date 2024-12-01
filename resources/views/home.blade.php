@@ -103,13 +103,24 @@
 
     </form>
 
+    {{-- validate error --}}
+    @if ($errors->any())
+        <div class="continer">
+            <div class="row">
+                <div class="alert alert-danger text-center mt-3">
+                    Por faveor selecione pelo menos uma operação. As parcelas devem ser número entre 0 e 999. O número de exercícios devem ser entre 5 e 50.
+                </div>
+            </div>
+        </div>        
+    @endif
+
     <!-- footer -->
     <footer class="text-center mt-5">
-        <p class="text-secondary">MathX &copy; <span class="text-info">[ANO]</span></p>
+        <p class="text-secondary">MathX &copy; <span class="text-info">{{date('Y')}}</span></p>
     </footer>
 
     <!-- bootstrap -->
-    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('assets/bootstrap/bootstrap.bundle.min.js')}}"></script>
 </body>
 
 </html>
